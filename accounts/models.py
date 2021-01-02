@@ -4,3 +4,5 @@ class Customer(User):
 
     class Meta:
         proxy = True
+
+

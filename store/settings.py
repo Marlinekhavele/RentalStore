@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'rest_framework_swagger',
     'django_filters',
     'accounts',
+    'books',
+    'orders',
 
 ]
 
