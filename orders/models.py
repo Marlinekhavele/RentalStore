@@ -1,5 +1,4 @@
 import uuid
-
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from accounts.models import Customer
@@ -9,7 +8,7 @@ from books.models import Book
 class Order(models.Model):
     """ order Model"""
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    price = models.DecimalField(_('Order Cost'), decimal_places=2, max_digits=15)
+    price_per_book = models.DecimalField(_('Order Cost'), decimal_places=2, max_digits=15)
     book = models.ForeignKey(
         Book, on_delete=models.CASCADE, related_name="book"
     )
@@ -19,6 +18,10 @@ class Order(models.Model):
    
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
     updated_at = models.DateTimeField(auto_now=True, editable=False)
+
+    @property
+    def current_price(self):
+        return (datetime.now() - self.created_at).days * price_per_book
 
     def ___str___(self):
         return self.id

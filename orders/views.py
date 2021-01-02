@@ -8,4 +8,11 @@ class OrderViewSet(viewsets.ViewSet):
     queryset = Order.objects.all()
     serializer_class = OrderSerializer
 
+    def list(self, request):
+        queryset = Order.objects.all()
+        serializer = OrderSerializer(queryset, many=True)
+        return Response(serializer.data)
+
+    
+
     
