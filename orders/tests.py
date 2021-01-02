@@ -2,7 +2,7 @@ from django.urls import reverse
 from rest_framework import status
 from rest_framework.test import APITestCase
 from accounts.models import Customer
-from products.models import Book
+from books.models import Book
 from orders.models import Order
 
 class OrderTests(APITestCase):
