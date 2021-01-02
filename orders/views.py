@@ -20,4 +20,4 @@ class ListOrderView(generics.ListAPIView):
     queryset = Order.objects.all()
     serializer_class = OrderSerializer
     filter_backends = (filters.DjangoFilterBackend,)
-    filter_fields = ('customer__id')
+    filter_fields = ('customer__id',)
