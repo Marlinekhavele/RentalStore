@@ -14,8 +14,8 @@ install deps
 - python manage.py createsuperuser
 - python manage.py makemigrations
 - python manage.py migrate
-### Start the project with the command python manage.py runserver
-### Visit http://localhost:8000/api/v1/docs to get started with the browsable api
+##### Start the project with the command python manage.py runserver
+##### Visit http://localhost:8000/api/v1/docs to get started with the browsable api
 
 ![alt text](BookApp.jpg "ERD diagram")
 MIT License
