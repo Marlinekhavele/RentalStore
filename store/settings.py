@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '9y+*=v_u1rcmx&7hwj!(3*br3j-e)xl%jgy$h80)s!1-whrnu='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['marline-store.herokuapp.com','127.0.0.1']
 
 
 # Application definition
