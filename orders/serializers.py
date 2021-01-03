@@ -28,9 +28,7 @@ class OrderCreateSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         book = Book.objects.get(pk=validated_data["id"])
         customer = Customer.objects.get(pk=validated_data["id"])
-        order = Order.objects.create(
-                book=book, customer=customer
-            )
+        
         return order
 
 
