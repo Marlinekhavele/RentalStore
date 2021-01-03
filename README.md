@@ -18,6 +18,8 @@ install deps
 ##### Visit http://localhost:8000/api/v1/docs to get started with the browsable api
 
 ![alt text](BookApp.jpg "ERD diagram")
+
+
 MIT License
 
 Copyright (c) 2020 CodeBeast
