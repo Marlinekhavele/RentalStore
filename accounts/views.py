@@ -5,7 +5,7 @@ from rest_framework.response import Response
 from accounts.models import Customer
 from accounts.serializers import CustomerSerializer
 
-class CustomerViewSet(viewsets.ViewSet):
+class CustomerViewSet(viewsets.ModelViewSet):
     queryset = Customer.objects.all()
     serializer_class = CustomerSerializer
 

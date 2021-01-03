@@ -5,7 +5,7 @@ from rest_framework.response import Response
 from books.models import Book
 from books.serializers import BookSerializer
 
-class BookViewSet(viewsets.ViewSet):
+class BookViewSet(viewsets.ModelViewSet):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
 

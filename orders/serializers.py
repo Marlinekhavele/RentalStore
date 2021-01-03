@@ -13,22 +13,20 @@ class OrderSerializer(serializers.ModelSerializer):
 
 
     class Meta:
-        fields = ['id','price_per_book','book','customer',"created_at","updated_at"]
-        read_only_fields = ['price_per_book']
+        fields = [
+            "id",
+            "price_per_book",
+            "book",
+            "customer",
+            "created_at",
+            "updated_at",
+        ]
+        read_only_fields = ["price_per_book"]
 
         model = Order
 
 class OrderCreateSerializer(serializers.ModelSerializer):
-
     class Meta:
-        model = Order 
-        fields = ['id','price_per_book','book','customer',"created_at","updated_at"]
-        read_only_fields = ['price_per_book']
-    
-    def create(self, validated_data):
-        book = Book.objects.get(pk=validated_data["id"])
-        customer = Customer.objects.get(pk=validated_data["id"])
-        
-        return order
-
+        model = Order
+        fields = ['book','customer']
 

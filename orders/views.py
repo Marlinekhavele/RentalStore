@@ -2,10 +2,8 @@ from rest_framework import generics
 from rest_framework.response import Response
 from django_filters import rest_framework as filters
 from orders.models import Order
-from orders.serializers import (
-    OrderSerializer,
-    OrderCreateSerializer
-)
+from orders.serializers import OrderSerializer, OrderCreateSerializer
+
 
 class CreateOrderView(generics.CreateAPIView):
     queryset = Order.objects.all()
