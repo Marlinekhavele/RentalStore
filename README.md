@@ -4,9 +4,9 @@ It is a program to calculate and print a statement of a customer's charges at a 
 # Running the project locally
 Clone the project using git clone
 Enter the project directory i.e cd store
-create virtual environment
+### create virtual environment
 - virtualenv env -p python3.6
-activate
+### activate
 - source env/bin/activate
 
 install deps
@@ -14,9 +14,8 @@ install deps
 - python manage.py createsuperuser
 - python manage.py makemigrations
 - python manage.py migrate
-Start the project with the command python manage.py runserver
-Visit http://localhost:8000/api/v1/docs to get started with the browsable api
-
+### Start the project with the command python manage.py runserver
+### Visit http://localhost:8000/api/v1/docs to get started with the browsable api
 
 ![alt text](BookApp.jpg "ERD diagram")
 MIT License
