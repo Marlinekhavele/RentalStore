@@ -8,7 +8,7 @@ from books.models import Book
 class Order(models.Model):
     """ order Model"""
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100,null=True)
     price_per_book = models.DecimalField(_('Order Cost'), decimal_places=2, max_digits=15)
     book = models.ForeignKey(Book, on_delete=models.SET_NULL,null=True)
     customer = models.ForeignKey(Customer, on_delete=models.SET_NULL,null=True)
