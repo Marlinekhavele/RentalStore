@@ -6,7 +6,6 @@ from django.utils.translation import ugettext_lazy as _
 
 
 class Book(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     isbn = models.CharField(_("ISBN"), max_length=13, unique=True)
     title = models.CharField(_("Book's title"), max_length=128)
     publisher = models.CharField(_("Publisher"), max_length=64)
