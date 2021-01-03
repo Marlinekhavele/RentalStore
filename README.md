@@ -1,12 +1,12 @@
 # RentalStore
 It is a program to calculate and print a statement of a customer's charges at a book rental store
 
-# Running the project locally
+##### Running the project locally
 Clone the project using git clone
 Enter the project directory i.e cd store
-### create virtual environment
+##### create virtual environment
 - virtualenv env -p python3.6
-### activate
+##### activate
 - source env/bin/activate
 
 install deps
