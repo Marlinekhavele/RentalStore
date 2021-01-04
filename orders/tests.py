@@ -51,3 +51,14 @@ class OrderTests(APITestCase):
 
         self.assertNotEquals(order_one.current_charge, order_two.current_charge)
 
+    def test_book_altered_prices(self):
+        order_one = Order.objects.create(
+            book =  self.book,
+            customer = self.customer
+        )
+        order_two = Order.objects.create(
+            book=self.book_two,
+            customer=self.customer
+        )
+
+        self.assertNotEquals(order_one.altered_prices, order_two.altered_prices)

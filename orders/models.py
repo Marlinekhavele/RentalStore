@@ -24,7 +24,20 @@ class Order(models.Model):
         days = (timezone.now() - self.created_at).days
         if days < 1:
             days = 1
+        if days < 2:
+            days = 2
+        if days < 3:
+            days = 3
         return days * self.book.daily_charge
+        
+    def altered_prices(self):
+        if self.book_type=='fiction':
+            return 2.00
+        if self.book_type=='regular':
+            return 1.00
+        if self.book_type=='novels':
+            return 4.50
+
 
     def ___str___(self):
         return self.id

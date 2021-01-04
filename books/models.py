@@ -29,8 +29,6 @@ class Book(models.Model):
             return 1.50
         if self.book_type=='novels':
             return 1.50
-        
-
-
+            
     def __str__(self):
         return self.title
