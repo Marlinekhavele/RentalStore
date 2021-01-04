@@ -19,6 +19,10 @@ install deps
 
 ![alt text](BookApp.jpg "ERD diagram")
 
+##### Use case diagram
+![alt text](BookStoreApp.jpeg "UML diagram")
+
+
 
 MIT License
 

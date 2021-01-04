@@ -1,4 +1,5 @@
 import uuid
+from django.utils import timezone
 from datetime import datetime
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
@@ -18,8 +19,12 @@ class Order(models.Model):
     updated_at = models.DateTimeField(auto_now=True, editable=False)
 
     @property
-    def current_price(self):
-        return (datetime.now() - self.created_at).days * self.price_per_book
+    def current_charge(self):
+
+        days = (timezone.now() - self.created_at).days
+        if days < 1:
+            days = 1
+        return days * self.book.daily_charge
 
     def ___str___(self):
         return self.id

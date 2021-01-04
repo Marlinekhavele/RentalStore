@@ -16,7 +16,12 @@ class BookTests(APITestCase):
             "publisher": "Harper; Illustrated edition (February 21, 2017)",
         }
         response = self.client.post(url, data, format="json")
+        response_json = response.json()
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         self.assertEqual(Book.objects.count(), 1)
         self.assertEqual(Book.objects.get().title, "Home Deus")
+        self.assertIsNotNone(Book.objects.get().book_type)
+        self.assertEqual(response_json["book_type"],"regular")
+        self.assertEqual(response_json["daily_charge"],1.50)
+        self.assertIsNotNone(Book.objects.get().daily_charge)
         self.assertIsNotNone(Book.objects.get().id)

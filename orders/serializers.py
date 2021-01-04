@@ -18,8 +18,8 @@ class OrderSerializer(serializers.ModelSerializer):
             "price_per_book",
             "book",
             "customer",
-            "created_at",
-            "updated_at",
+            "current_charge",
+
         ]
         read_only_fields = ["price_per_book"]
 
