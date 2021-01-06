@@ -58,5 +58,4 @@ class OrderTests(APITestCase):
         )
 
         self.assertNotEquals(order_one.current_charge, order_two.current_charge)
-    def test_minimum_charge(self):
-        pass
+    
