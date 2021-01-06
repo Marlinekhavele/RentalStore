@@ -17,6 +17,7 @@ class Book(models.Model):
     publisher = models.CharField(_("Publisher"), max_length=64)
     author = models.CharField(_("Author"), max_length=64)
     book_type = models.CharField(_('Book Type'), max_length=20, choices=BOOK_TYPE,default='regular')
+    flat_days_charge = models.DecimalField(_('Flat Days Charge'),decimal_places=2, max_digits=15, default=1.0)
     pages = models.IntegerField(_("Pages"), default=0)
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
     updated_at = models.DateTimeField(auto_now=True, editable=False)

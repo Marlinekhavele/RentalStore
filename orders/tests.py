@@ -24,6 +24,14 @@ class OrderTests(APITestCase):
             book_type="fiction",
             pages=144
         )
+        self.book_three = Book.objects.create(
+            isbn="978-0593236667",
+            title="The Last Black Unicorn",
+            publisher="Simon & Schuster Audio",
+            author="Tiffany Haddish",
+            book_type="fiction",
+            pages=1399
+        )
         self.customer = Customer.objects.create(
             username="customer_one",
             password="customer_password",
@@ -50,15 +58,5 @@ class OrderTests(APITestCase):
         )
 
         self.assertNotEquals(order_one.current_charge, order_two.current_charge)
-
-    def test_book_altered_prices(self):
-        order_one = Order.objects.create(
-            book =  self.book,
-            customer = self.customer
-        )
-        order_two = Order.objects.create(
-            book=self.book_two,
-            customer=self.customer
-        )
-
-        self.assertNotEquals(order_one.altered_prices, order_two.altered_prices)
+    def test_minimum_charge(self):
+        pass
